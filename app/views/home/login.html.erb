@@ -1,0 +1,91 @@
+<section id="checkoutAcount" class="checkout pb-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-7">
+                <div class="checkout-form">
+                    <h3>Đăng ký tài khoản</h3>
+                    <form class="mb-0" method="POST">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-12">
+                                <label for="name" class="">Tên của bạn *</label>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="" required>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-12">
+                                <label for="contact-email" class="">Email *</label>
+                                <?php echo $errEmail;?>
+                                <input type="email" class="form-control" name="contact-email" id="email" placeholder=""
+                                    required>
+
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <label for="password" class="">Mật khẩu *</label>
+                                <input type="password" class="form-control" name="password" id="password" placeholder=""
+                                    required>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <label for="re_password" class="">Nhập lại mật khẩu *</label>
+                                <input type="password" class="form-control" name="re_password" id="password"
+                                    placeholder="" required>
+                                <?php echo $errPass;?>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-12">
+                                <label for="phone" class="">Số điện thoại *</label>
+                                <input type="text" class="form-control" name="phone" id="phone" placeholder="" required>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <label for="address" class="">Địa chỉ nhà</label>
+                                <input type="text" class="form-control" name="address" id="address" placeholder="">
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <input type="submit" value="Đăng ký" name="submit"
+                                    class="btn btn--secondary btn--rounded mt-30">
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- .col-md-7 end -->
+            <div class="col-xs-12 col-sm-12 col-md-5">
+                <div class="checkout-form">
+                    <h3>Đăng nhập</h3>
+                    <form class="mb-0" action="login" method="POST">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <input type="text" class="form-control" name="contact-email" id="email"
+                                    placeholder="Username" required>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <input type="password" class="form-control" name="password" id="Password"
+                                    placeholder="Mật khẩu *" required>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="pull-left">
+                                    <div class="input-checkbox">
+                                        <label class="label-checkbox">
+                                            <input type="checkbox" name="rememberMe">
+                                            <div class="check-indicator"></div>
+                                        </label>
+                                        <span>Nhớ tài khoản</span>
+                                    </div>
+                                </div>
+                                <div class="pull-right">
+                                    <div class="forget--pass">
+                                        <a href="#">Quên tài khoản?</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <input type="submit" value="Đăng nhập" name="submit"
+                                    class="btn btn--secondary btn--rounded mt-30">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- .col-md-5 end -->
+        </div>
+        <!-- .row end -->
+    </div>
+    <!-- .container end -->
+</section>

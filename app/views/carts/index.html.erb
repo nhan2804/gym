@@ -1,0 +1,97 @@
+<p id="notice"><%= notice %></p>
+
+
+<section id="shopcart" class="shop shop-cart bg-white">
+  <div class="container">
+    <h1>Carts</h1>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="shop-cart-heading">
+          
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="cart-table table-responsive">
+          <table class="table">
+            <thead>
+              <tr class="cart-product">
+                <th></th>
+                <th class="cart-product-item">Tên</th>
+                <th class="cart-product-price">Đơn giá</th>
+                <th class="cart-product-quantity">Số lượng</th>
+                <th class="cart-product-total">Tổng cộng</th>
+                <th class="cart-product-remove"></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @carts.each do |cart| %>
+              <tr class="cart-product">
+                <td></td>
+                <td class="cart-product-item">
+
+                  <div class="cart-product-img">
+                    <a href="#">
+                 
+                      <%= image_tag(cart.thumbnail,class:"card-img-top img-fluid h-200") %>
+                    </a>
+                  </div>
+                  <div class="cart-product-name">
+                    <%= cart.name %>
+                  </div>
+                </td>
+                <td class="cart-product-price"><%= cart.price %></td>
+                <td class="cart-product-quantity">
+                  <div class="product-quantity">
+                    <span class="qant-plus"><i class="fa fa-caret-up"></i></span>
+                    <input type="text"  value=<%= cart.quantity %> id="pro1-qunt"
+                      readonly>
+                    <span class="qant-minus"><i class="fa fa-caret-down"></i></span>
+                  </div>
+                </td>
+                <td class="cart-product-total"><%= cart.quantity*cart.price %></td>
+                <td>
+                  <div class="cart-product-remove">
+                    <a ><i
+                        class="lnr lnr-cross"></i></a>
+                  </div>
+                </td>
+                <td></td>
+              </tr>
+<% end %>
+            </tbody>
+          </table>
+        </div>
+        <!-- .cart-table end -->
+      </div>
+      <!-- .col-md-12 end -->
+    </div>
+    <!-- .row end -->
+    <div class="row clearfix">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="cart-product-action">
+          <form class="form-inline pull-left">
+            <input type="text" class="form-control mb-0" id="coupon" placeholder="Mã Giảm Giá" />
+            <button type="submit" class="btn btn--secondary">Xác Nhận</button>
+          </form>
+          <div class="cart-total-amount text-right">
+            <!--  -->
+          </div>
+          <!-- .cart-total-amount end -->
+        </div>
+      </div>
+      <!-- .col-md-6 end -->
+    </div>
+    <!-- .row end -->
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <a class="btn btn--secondary btn--rounded pull-right" href="shop-checkout">Thanh Toán</a>
+      </div>
+    </div>
+  </div>
+  <!-- .container end -->
+</section>
+
+<br>
+
+<%= link_to 'New Cart', new_cart_path %>

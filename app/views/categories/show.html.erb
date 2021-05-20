@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+  <h1>Sản phẩm > Danh mục ><%= @cate.name %></h1>
+      <div class="row">
+        <% @cate.product.each do |pro| %>
+          <div class="col-lg-3 col-6">
+            <div class="card" style="width: 100%;">
+              <%= image_tag(pro.thumbnail,class:"card-img-top img-fluid h-200") %>
+
+                <div class="card-body">
+                  <h5 class="card-title">
+                    <%= pro.name %>
+                  </h5>
+                  <p class="card-text">
+                    <%= pro.desc[0..80]+ "..." %>
+                      </h5>
+                  </p>
+                  <span class="btn btn-primary">
+                    <%= link_to 'Xem chi tiết' , pro %>
+                  </span>
+                </div>
+            </div>
+          </div>
+          <% end %>
+      </div>
+</div>

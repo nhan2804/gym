@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 col-12">
+      <%= image_tag(@product.thumbnail,class:"card-img-top img-fluid h-200") %>
+    </div>
+    <div class="col-lg-6 col-12">
+    <h3 class="text-success"><%= @product.name %></h3>
+    <h4 class="text-danger"> Giá : <%= @product.price %>đ</h4>
+    <form action="../carts" method="post">
+      <input type="number" value="1" name="quantity" style="width: 60px;height: 44px;">
+      <input type="hidden" name="products_id" value=<%= @product.id %>>
+      <button class="btn btn-warning text-light">Thêm vào giỏ hàng</button>
+    </form>
+    </div>
+  </div>
+  <h3>Miêu tả</h3>
+  <p><%= @product.desc %></p>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Users:</strong>
+  <%= @cart.users_id %>
+</p>
+
+<p>
+  <strong>Products:</strong>
+  <%= @cart.products_id %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @cart.quantity_id %>
+</p>
+
+<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Back', carts_path %>
